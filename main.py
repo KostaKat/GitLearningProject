@@ -1,9 +1,21 @@
 import tkinter as tk
 
 # Function to handle button click events
-def on_button_click(number):
-    print(f'Number:{number}')
-    pass
+def on_button_click(input_char):
+    if input_char == 'C':  # Clear the entry field
+        entry.delete(0, tk.END)
+    elif input_char == '=':  # Calculate the result
+        try:
+            result = eval(entry.get())
+            entry.delete(0, tk.END)
+            entry.insert(0, str(result))
+        except Exception as e:
+            entry.delete(0, tk.END)
+            entry.insert(0, 'Error')
+    else:  # Update the entry with the pressed button's text
+        current = entry.get()
+        entry.delete(0, tk.END)
+        entry.insert(0, current + input_char)
 
 # Create the main window
 root = tk.Tk()
