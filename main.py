@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Function to handle button click events
 def on_button_click(number):
-    # Placeholder function for button click
+    print(f'Number:{number}')
     pass
 
 # Create the main window
