@@ -1,0 +1,3 @@
+[submodule "ttkbootstrap"]
+	path = ttkbootstrap
+	url = https://github.com/israel-dryer/ttkbootstrap.git
