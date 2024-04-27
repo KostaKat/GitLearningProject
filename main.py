@@ -1,6 +1,9 @@
 import tkinter as tk
+from ttkbootstrap import Style
 
 # Function to handle button click events
+
+
 def on_button_click(input_char):
     if input_char == 'C':  # Clear the entry field
         entry.delete(0, tk.END)
@@ -17,8 +20,10 @@ def on_button_click(input_char):
         entry.delete(0, tk.END)
         entry.insert(0, current + input_char)
 
+
 # Create the main window
-root = tk.Tk()
+style = Style(theme='vapor')
+root = style.master
 root.title("Simple Calculator")
 
 # Create the display area
@@ -35,7 +40,7 @@ button_texts = [
 
 # Create and place buttons dynamically
 for i, text in enumerate(button_texts):
-    function = lambda x=text: on_button_click(x)
+    def function(x=text): return on_button_click(x)
     button = tk.Button(root, text=text, padx=20, pady=20, command=function)
     row = (i // 4) + 1
     column = i % 4
@@ -43,4 +48,3 @@ for i, text in enumerate(button_texts):
 
 # Run the main event loop
 root.mainloop()
-
