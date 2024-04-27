@@ -36,7 +36,7 @@ button_texts = [
 # Create and place buttons dynamically
 for i, text in enumerate(button_texts):
     function = lambda x=text: on_button_click(x)
-    button = tk.Button(root, text=text, padx=20, pady=20, command=function)
+    button = tk.Button(root, text=text, padx=30, pady=30, command=function)
     row = (i // 4) + 1
     column = i % 4
     button.grid(row=row, column=column)
