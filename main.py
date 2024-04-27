@@ -13,9 +13,10 @@ def on_button_click(input_char):
             entry.delete(0, tk.END)
             entry.insert(0, 'Error')
     else:  # Update the entry with the pressed button's text
-        current = entry.get()
-        entry.delete(0, tk.END)
-        entry.insert(0, current + input_char)
+    	if input_char not in ['+', '*', '/']:
+            current = entry.get()
+            entry.delete(0, tk.END)
+            entry.insert(0, current + input_char)
 
 # Create the main window
 root = tk.Tk()
